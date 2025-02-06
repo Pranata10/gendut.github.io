@@ -1,0 +1,168 @@
+:root {
+  --pink: #f14e95;
+  --blue: #2f4f7f;
+  --bg: #0a0a0a;
+  --shadow: 0 2px 2px rgba(255, 252, 252, 0.5);
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: 'Work Sans', sans-serif;
+  justify-content: center;
+  min-width: 100vw; /* Changed to vw for width */
+  object-fit: cover;
+  margin: 0; /* Added margin reset */
+  padding: 0; /* Added padding reset */
+}
+
+.hero {
+  background-image: url(Bg1.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Sacramento', cursive;
+  font-size: 8rem; /* Adjusted for better fit on smaller screens */
+}
+
+.home {
+  background-image: url(Bg2.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.home2 {
+  background-image: url(Bg1.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+button {
+  background-color: #ffffff; /* Green background */
+  border: none; /* Remove borders */
+  color: rgb(0, 0, 0); /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  transition-duration: 0.4s; /* Animation duration */
+}
+
+.oval-button {
+  border-radius: 50px; /* sets the border radius to half of its width to create an oval shape */
+  padding: 10px 20px; /* adjust padding as needed */
+}
+
+button:hover {
+  background-color: rgb(238, 221, 146); /* White background on hover */
+  color: rgb(1, 1, 1); /* Black text on hover */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home2 .box {
+  position: relative;
+  height: 300px;
+  width: 200px;
+  transform-style: preserve-3d;
+  animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.home2 .box div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transform: rotateY(calc(var(--v) * 45deg)) translateZ(300px);
+}
+
+.home2 .box div img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Media Query for iPhone 13 (414px width) */
+@media only screen and (max-width: 414px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 4rem;
+  }
+  .hero h2 {
+    font-size: 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .home2 p {
+    font-size: 0.08rem;
+  }
+
+  .hero .home2 h2 {
+    font-size: 0.4rem;
+  }
+
+  .home2 .box {
+    height: 180px;
+    width: 90px;
+  }
+  .home2 .box div {
+    transform: rotateY(calc(var(--v) * 45deg)) translateZ(180px);
+  }
+  .oval-button {
+    padding: 8px 16px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
